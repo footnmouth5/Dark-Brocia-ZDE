@@ -1,6 +1,6 @@
 # Dark-Brocia-ZDE
 
-Dark Broica CDE theme for Zen Browser. Vertical tabs · compact mode · userChrome.css.
+Dark Broica CDE theme for Zen Browser. Vertical tabs  compact mode  userChrome.css.
 
 ## Preview
 
@@ -8,7 +8,7 @@ Dark Broica CDE theme for Zen Browser. Vertical tabs · compact mode · userChro
 
 ## Files
 
-| File | What it is |
+| File |  |
 |---|---|
 | [`userChrome.css`](userChrome.css) | Main theme. Full CDE styling with the stamped-border chrome, per-region palettes, and compact-mode handling. |
 | [`flatbase_userChrome.css`](flatbase_userChrome.css) | Flat alternative. Same palette and layout, but strips the raised/inverted border treatment on toolbars and buttons. One palette. |
