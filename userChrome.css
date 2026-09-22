@@ -1,0 +1,693 @@
+/* ============================================================
+   Broica CDE — Zen userChrome.css
+   "Two-region" edition
+
+   Web-adjacent chrome (URL bar, bookmarks, nav bar):
+     matches the userstyle palette — dark surfaces, putty text,
+     teal and orange accents.
+
+   Contrast region (sidebar, tabs, app menu):
+     warm rose/slate tones that stand apart from the web chrome.
+   ============================================================ */
+
+/* --- Variables --- */
+:root {
+  /* Extended darks */
+  --cde-abyss:   #1e222a;
+  --cde-bg:      #2a2e38;
+  --cde-panel:   #3a4050;
+  --cde-raised:  #4a5160;
+  --cde-hilite:  #6a7285;
+
+  /* Palette */
+  --cde-putty:   #c6b2a8;
+  --cde-muted:   #999999;
+  --cde-slate:   #8998aa;
+  --cde-slate-d: #686f82;
+  --cde-orange:  #eda870;
+  --cde-teal:    #4992a7;
+  --cde-rose:    #b7878d;
+  --cde-steel:   #93abbf;
+
+  /* Zen driver overrides */
+  --zen-primary-color: #eda870 !important;
+  --zen-navigator-toolbox-background: #8998aa !important;
+  --zen-themed-toolbar-bg-transparent: #2a2e38 !important;
+  --zen-toolbar-element-bg: #3a4050 !important;
+  --zen-toolbar-element-bg-hover: #4a5160 !important;
+}
+
+/* --- Global resets --- */
+* {
+  border-radius: 0 !important;
+}
+
+/* ============================================================
+   TOP-LEVEL WRAPPERS
+   ============================================================ */
+
+#zen-main-app-wrapper,
+#browser,
+#zen-appcontent-wrapper {
+  background: var(--cde-bg) !important;
+  background-color: var(--cde-bg) !important;
+  color: var(--cde-putty) !important;
+}
+
+/* Kill Zen's grainy backdrop */
+.zen-browser-generic-background,
+.zen-browser-generic-background::before,
+.zen-browser-generic-background::after,
+#zen-browser-background {
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+}
+
+#zen-toolbar-background,
+.zen-toolbar-background {
+  background: var(--cde-bg) !important;
+  background-image: none !important;
+  opacity: 1 !important;
+}
+
+.chrome-block {
+  background: var(--cde-bg) !important;
+  background-color: var(--cde-bg) !important;
+  border-color: var(--cde-abyss) !important;
+}
+
+/* ============================================================
+   SIDEBAR — slate surface (contrast region)
+   ============================================================ */
+
+#navigator-toolbox {
+  background: var(--cde-slate) !important;
+  background-color: var(--cde-slate) !important;
+  color: var(--cde-abyss) !important;
+  border: none !important;
+  box-shadow: none !important;
+  scrollbar-color: var(--cde-slate-d) var(--cde-slate) !important;
+  scrollbar-width: thin !important;
+}
+
+#sidebar-container {
+  background: var(--cde-slate) !important;
+  background-color: var(--cde-slate) !important;
+  border: none !important;
+}
+
+#titlebar {
+  background: var(--cde-slate-d) !important;
+  background-color: var(--cde-slate-d) !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--cde-putty) !important;
+}
+
+toolbar#zen-sidebar-top-buttons,
+#zen-sidebar-top-buttons,
+#zen-sidebar-top-buttons-customization-target {
+  background: var(--cde-slate-d) !important;
+  background-color: var(--cde-slate-d) !important;
+  color: var(--cde-putty) !important;
+  border: none !important;
+  box-shadow: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+#zen-sidebar-top-buttons .toolbarbutton-icon {
+  fill: var(--cde-putty) !important;
+  color: var(--cde-putty) !important;
+}
+#zen-sidebar-top-buttons .toolbarbutton-icon:hover {
+  fill: var(--cde-orange) !important;
+  color: var(--cde-orange) !important;
+}
+
+#zen-sidebar-top-buttons-separator {
+  background: var(--cde-abyss) !important;
+  background-image: none !important;
+  border: none !important;
+  height: 1px !important;
+  min-height: 1px !important;
+  max-height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#zen-toggle-compact-mode {
+  background: var(--cde-abyss) !important;
+  color: var(--cde-orange) !important;
+  border: 1px solid var(--cde-abyss) !important;
+}
+#zen-toggle-compact-mode:hover {
+  background: var(--cde-orange) !important;
+  color: var(--cde-abyss) !important;
+}
+
+#zen-sidebar-splitter {
+  background: var(--cde-abyss) !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  opacity: 1 !important;
+}
+#zen-sidebar-splitter::before {
+  background: var(--cde-orange) !important;
+  opacity: 0 !important;
+}
+#zen-sidebar-splitter:hover {
+  background: var(--cde-orange) !important;
+}
+
+#sidebar-launcher-splitter {
+  background: var(--cde-abyss) !important;
+  border: none !important;
+}
+
+#TabsToolbar,
+#tabbrowser-tabs,
+#zen-tabs-wrapper {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* ============================================================
+   TABS (contrast region)
+   ============================================================ */
+
+.tabbrowser-tab .tab-background {
+  background: var(--cde-steel) !important;
+  border: 1px solid var(--cde-abyss) !important;
+  border-radius: 0 !important;
+}
+
+.tabbrowser-tab:hover .tab-background {
+  background: var(--cde-putty) !important;
+}
+
+.tabbrowser-tab[selected] .tab-background,
+.tabbrowser-tab[visuallyselected] .tab-background {
+  background: var(--cde-teal) !important;
+  border: 2px solid !important;
+  border-color: var(--cde-putty) var(--cde-abyss) var(--cde-abyss) var(--cde-putty) !important;
+  box-shadow: inset 3px 0 0 0 var(--cde-orange) !important;
+}
+
+.tabbrowser-tab .tab-label {
+  color: var(--cde-abyss) !important;
+}
+.tabbrowser-tab:hover .tab-label {
+  color: var(--cde-abyss) !important;
+}
+.tabbrowser-tab[selected] .tab-label,
+.tabbrowser-tab[visuallyselected] .tab-label {
+  color: white !important;
+  font-weight: bold !important;
+}
+
+#tabs-newtab-button,
+#new-tab-button {
+  background: var(--cde-abyss) !important;
+  color: var(--cde-putty) !important;
+  border: 1px solid var(--cde-slate-d) !important;
+}
+#tabs-newtab-button:hover,
+#new-tab-button:hover {
+  background: var(--cde-orange) !important;
+  color: var(--cde-abyss) !important;
+  border-color: var(--cde-putty) !important;
+}
+
+#tabs-newtab-button .toolbarbutton-text,
+#new-tab-button .toolbarbutton-text {
+  color: inherit !important;
+}
+
+/* ============================================================
+   NAV BAR (web-adjacent region)
+   Dark surface, putty text, teal hover. Matches userstyle.
+   ============================================================ */
+
+#zen-appcontent-navbar-wrapper,
+#zen-appcontent-navbar-container,
+#zen-appcontent-navbar-container.chromeclass-location {
+  background: var(--cde-bg) !important;
+  background-color: var(--cde-bg) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#nav-bar {
+  background: var(--cde-bg) !important;
+  background-color: var(--cde-bg) !important;
+  color: var(--cde-putty) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#nav-bar-customization-target {
+  background: var(--cde-bg) !important;
+}
+
+/* Generic toolbar icons — putty, orange on hover */
+.toolbarbutton-icon {
+  fill: var(--cde-putty) !important;
+  color: var(--cde-putty) !important;
+}
+.toolbarbutton-icon:hover {
+  fill: var(--cde-orange) !important;
+  color: var(--cde-orange) !important;
+}
+
+/* ============================================================
+   TOOLBAR BUTTONS — the pop layer
+   Every .toolbarbutton-1 gets a subtle raised panel background
+   so buttons read as physical widgets stamped into the toolbar.
+   ============================================================ */
+
+.toolbarbutton-1:not(#PanelUI-menu-button) {
+  background: var(--cde-panel) !important;
+  background-color: var(--cde-panel) !important;
+  border: 2px solid !important;
+  border-color: var(--cde-hilite) var(--cde-abyss) var(--cde-abyss) var(--cde-hilite) !important;
+  padding: 2px !important;
+}
+
+.toolbarbutton-1:not(#PanelUI-menu-button):hover {
+  background: var(--cde-raised) !important;
+  border-color: var(--cde-hilite) var(--cde-abyss) var(--cde-abyss) var(--cde-hilite) !important;
+}
+
+.toolbarbutton-1:not(#PanelUI-menu-button):hover .toolbarbutton-icon {
+  fill: var(--cde-orange) !important;
+  color: var(--cde-orange) !important;
+}
+
+.toolbarbutton-1:not(#PanelUI-menu-button):active,
+.toolbarbutton-1:not(#PanelUI-menu-button)[open="true"] {
+  border-color: var(--cde-abyss) var(--cde-hilite) var(--cde-hilite) var(--cde-abyss) !important;
+  background: var(--cde-panel) !important;
+}
+
+/* ============================================================
+   HAMBURGER — matches the rose app menu it opens
+   ============================================================ */
+
+#PanelUI-menu-button,
+#PanelUI-button {
+  background: var(--cde-rose) !important;
+  background-color: var(--cde-rose) !important;
+  border: 2px solid !important;
+  border-color: var(--cde-putty) var(--cde-abyss) var(--cde-abyss) var(--cde-putty) !important;
+  padding: 2px !important;
+}
+
+#PanelUI-menu-button:hover,
+#PanelUI-button:hover {
+  background: var(--cde-abyss) !important;
+  border-color: var(--cde-hilite) var(--cde-abyss) var(--cde-abyss) var(--cde-hilite) !important;
+}
+
+#PanelUI-menu-button .toolbarbutton-icon,
+#PanelUI-button .toolbarbutton-icon {
+  fill: var(--cde-abyss) !important;
+  color: var(--cde-abyss) !important;
+}
+
+#PanelUI-menu-button:hover .toolbarbutton-icon,
+#PanelUI-button:hover .toolbarbutton-icon {
+  fill: var(--cde-putty) !important;
+  color: var(--cde-putty) !important;
+}
+
+#PanelUI-menu-button[open="true"],
+#PanelUI-button[open="true"] {
+  background: var(--cde-abyss) !important;
+  border-color: var(--cde-abyss) var(--cde-putty) var(--cde-putty) var(--cde-abyss) !important;
+}
+
+#PanelUI-menu-button[open="true"] .toolbarbutton-icon,
+#PanelUI-button[open="true"] .toolbarbutton-icon {
+  fill: var(--cde-putty) !important;
+  color: var(--cde-putty) !important;
+}
+
+/* ============================================================
+   URL BAR (web-adjacent region)
+   Outer surface = panel. Input container gets an offset color
+   so there's a visible inset between the outer chrome and the
+   typing area.
+   ============================================================ */
+
+#urlbar-container {
+  background: var(--cde-bg) !important;
+}
+
+#urlbar {
+  background: var(--cde-panel) !important;
+  background-color: var(--cde-panel) !important;
+  color: var(--cde-putty) !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* The outer visible surface */
+.urlbar-background {
+  background: var(--cde-panel) !important;
+  background-color: var(--cde-panel) !important;
+  background-image: none !important;
+  border: 2px solid !important;
+  border-color: var(--cde-abyss) var(--cde-hilite) var(--cde-hilite) var(--cde-abyss) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* URL bar focused — teal border flip */
+#urlbar[focused="true"] .urlbar-background {
+  background: var(--cde-panel) !important;
+  border-color: var(--cde-teal) var(--cde-abyss) var(--cde-abyss) var(--cde-teal) !important;
+}
+
+#urlbar[open="true"] .urlbar-background {
+  background: var(--cde-panel) !important;
+  border-color: var(--cde-abyss) var(--cde-hilite) var(--cde-hilite) var(--cde-abyss) !important;
+}
+
+/* THE OFFSET — input container gets a distinct recessed tone
+   so it reads as a sunken field inside the raised URL bar. */
+.urlbar-input-container {
+  background: var(--cde-abyss) !important;
+  background-color: var(--cde-abyss) !important;
+  border: 2px solid !important;
+  border-color: var(--cde-abyss) var(--cde-hilite) var(--cde-hilite) var(--cde-abyss) !important;
+  margin: 2px !important;
+  padding: 2px 4px !important;
+}
+
+#urlbar[focused="true"] .urlbar-input-container {
+  background: var(--cde-bg) !important;
+  border-color: var(--cde-teal) var(--cde-abyss) var(--cde-abyss) var(--cde-teal) !important;
+}
+
+#urlbar-input {
+  color: var(--cde-putty) !important;
+}
+#urlbar[focused="true"] #urlbar-input {
+  color: var(--cde-putty) !important;
+}
+
+/* URL bar icons */
+#identity-icon,
+#tracking-protection-icon,
+#star-button,
+#reader-mode-button {
+  fill: var(--cde-putty) !important;
+  color: var(--cde-putty) !important;
+}
+#urlbar[focused="true"] #identity-icon,
+#urlbar[focused="true"] #star-button,
+#urlbar[focused="true"] #reader-mode-button {
+  fill: var(--cde-orange) !important;
+  color: var(--cde-orange) !important;
+}
+
+#identity-box,
+#identity-icon-label {
+  color: var(--cde-putty) !important;
+}
+
+/* Kill stray seams */
+#urlbar *,
+.urlbar-input-container *,
+.urlbar-input-container::before,
+.urlbar-input-container::after,
+#urlbar::before,
+#urlbar::after {
+  box-shadow: none !important;
+  outline: none !important;
+  background-image: none !important;
+}
+
+/* ============================================================
+   URL BAR DROPDOWN
+   ============================================================ */
+
+.urlbarView {
+  background: var(--cde-panel) !important;
+  background-color: var(--cde-panel) !important;
+  color: var(--cde-putty) !important;
+  border: 2px solid !important;
+  border-color: var(--cde-abyss) var(--cde-hilite) var(--cde-hilite) var(--cde-abyss) !important;
+}
+
+.urlbarView-body-outer,
+.urlbarView-body-inner,
+#urlbar-results {
+  background: var(--cde-panel) !important;
+}
+
+.urlbarView-row {
+  background: var(--cde-panel) !important;
+  color: var(--cde-putty) !important;
+  border-bottom: 1px solid var(--cde-raised) !important;
+}
+
+.urlbarView-row:hover,
+.urlbarView-row[selected],
+.urlbarView-row[aria-selected="true"] {
+  background: var(--cde-teal) !important;
+  color: var(--cde-putty) !important;
+}
+
+.urlbarView-title,
+.urlbarView-title-separator {
+  color: var(--cde-putty) !important;
+}
+
+.urlbarView-url {
+  color: var(--cde-muted) !important;
+}
+
+.urlbarView-row:hover .urlbarView-title,
+.urlbarView-row:hover .urlbarView-url,
+.urlbarView-row[selected] .urlbarView-title,
+.urlbarView-row[selected] .urlbarView-url {
+  color: var(--cde-putty) !important;
+}
+
+.urlbarView-row[type="search_engine"] {
+  border-left: 3px solid var(--cde-orange) !important;
+}
+
+.urlbarView-row-inner {
+  border-radius: 0 !important;
+}
+
+/* ============================================================
+   BOOKMARKS TOOLBAR (web-adjacent, matching URL bar)
+   ============================================================ */
+
+#PersonalToolbar {
+  background: var(--cde-panel) !important;
+  background-color: var(--cde-panel) !important;
+  color: var(--cde-putty) !important;
+  border: none !important;
+  border-top: 2px solid var(--cde-abyss) !important;
+  box-shadow: none !important;
+}
+
+#personal-toolbar-empty,
+#import-button,
+#personal-bookmarks {
+  background: var(--cde-panel) !important;
+  color: var(--cde-putty) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#PersonalToolbar .toolbarbutton-icon,
+#PersonalToolbar .bookmark-item {
+  fill: var(--cde-putty) !important;
+  color: var(--cde-putty) !important;
+}
+#PersonalToolbar .toolbarbutton-icon:hover,
+#PersonalToolbar .bookmark-item:hover {
+  fill: var(--cde-orange) !important;
+  color: var(--cde-orange) !important;
+}
+
+/* ============================================================
+   CONTENT AREA
+   ============================================================ */
+
+#zen-tabbox-wrapper,
+#tabbrowser-tabbox,
+#tabbrowser-tabpanels {
+  background: var(--cde-bg) !important;
+  border: none !important;
+}
+
+#ai-window-splitter {
+  background: var(--cde-abyss) !important;
+  border: none !important;
+}
+#ai-window-box,
+.ai-window-browser-stack {
+  background: var(--cde-bg) !important;
+}
+
+findbar {
+  background: var(--cde-panel) !important;
+  color: var(--cde-putty) !important;
+}
+
+/* ============================================================
+   MENUS AND POPUPS (generic)
+   ============================================================ */
+
+menupopup,
+panel {
+  background: var(--cde-panel) !important;
+  color: var(--cde-putty) !important;
+  border: 2px solid var(--cde-abyss) !important;
+}
+
+menuitem,
+menu {
+  color: var(--cde-putty) !important;
+}
+
+menuitem:hover,
+menu:hover,
+menuitem[_moz-menuactive="true"] {
+  background: var(--cde-teal) !important;
+  color: var(--cde-putty) !important;
+}
+
+/* ============================================================
+   APP MENU — rose/slate contrast region
+   Deliberately different palette from the rest of the chrome.
+   ============================================================ */
+
+#appMenu-popup {
+  background: var(--cde-rose) !important;
+  background-color: var(--cde-rose) !important;
+  color: var(--cde-abyss) !important;
+  border: 2px solid var(--cde-abyss) !important;
+}
+
+#appMenu-popup .panel-subview-body,
+#appMenu-popup .panel-subview-body > scrollbox {
+  background: var(--cde-rose) !important;
+  color: var(--cde-abyss) !important;
+}
+
+#appMenu-popup toolbarbutton {
+  color: var(--cde-abyss) !important;
+}
+
+#appMenu-popup toolbarbutton:hover {
+  background: var(--cde-abyss) !important;
+  color: var(--cde-putty) !important;
+}
+
+#appMenu-popup toolbarseparator,
+#appMenu-popup #appMenu-fxa-separator,
+#appMenu-popup panelview toolbarseparator {
+  background: var(--cde-abyss) !important;
+  background-image: none !important;
+  border: none !important;
+  border-top: 1px solid var(--cde-abyss) !important;
+  height: 1px !important;
+  min-height: 1px !important;
+  max-height: 1px !important;
+  margin: 4px 8px !important;
+  padding: 0 !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+#appMenu-popup panelview,
+#appMenu-popup .PanelUI-subView,
+#appMenu-popup .panel-viewstack,
+#appMenu-popup .panel-viewcontainer {
+  background: var(--cde-rose) !important;
+  color: var(--cde-abyss) !important;
+}
+
+/* Panel headers — abyss band */
+#appMenu-popup .panel-header,
+#appMenu-popup .panel-header > h1 > span,
+#appMenu-popup .subview-header > h2 {
+  background: var(--cde-abyss) !important;
+  color: var(--cde-putty) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Subview buttons — abyss hover (contrast) */
+#appMenu-popup .subviewbutton,
+#appMenu-popup .subviewbutton-back,
+#appMenu-popup .subviewbutton-iconic,
+#appMenu-popup .subviewbutton-nav,
+#appMenu-popup .panel-subview-footer-button {
+  background: transparent !important;
+  color: var(--cde-abyss) !important;
+  border: none !important;
+  box-shadow: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+#appMenu-popup .subviewbutton:hover,
+#appMenu-popup .subviewbutton-back:hover,
+#appMenu-popup .subviewbutton-iconic:hover,
+#appMenu-popup .subviewbutton-nav:hover,
+#appMenu-popup .panel-subview-footer-button:hover {
+  background: var(--cde-abyss) !important;
+  color: var(--cde-putty) !important;
+}
+
+/* Footer button icons */
+#PanelUI-historyMore .toolbarbutton-icon,
+#panelMenu_showAllBookmarks .toolbarbutton-icon,
+#appmenu-moreTools .toolbarbutton-icon {
+  fill: var(--cde-abyss) !important;
+  color: var(--cde-abyss) !important;
+}
+
+#PanelUI-historyMore:hover .toolbarbutton-icon,
+#panelMenu_showAllBookmarks:hover .toolbarbutton-icon,
+#appmenu-moreTools:hover .toolbarbutton-icon {
+  fill: var(--cde-putty) !important;
+  color: var(--cde-putty) !important;
+}
+
+#PanelUI-history,
+#PanelUI-bookmarks,
+#PanelUI-historyMore,
+#panelMenu_showAllBookmarks,
+#appmenu-moreTools,
+#appMenuRecentlyClosedTabs,
+#appMenuRecentlyClosedWindows,
+#appmenu-developer-tools,
+#appmenu-developer-tools-view {
+  background: var(--cde-rose) !important;
+  color: var(--cde-abyss) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+:root[zen-compact-mode="true"] #navigator-toolbox {
+  top: var(--zen-bookmark-bar-height, 12px) !important;
+}
+
+/* Set the height variable based on whether the bar is visible */
+:root[zen-compact-mode="true"]:has(#PersonalToolbar:not([collapsed])) {
+  --zen-bookmark-bar-height: 2px; /* Match your actual bookmark bar height */
+}
