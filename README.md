@@ -58,6 +58,10 @@ You can also install the userstyle directly from [userstyles.world](https://user
 - The two `userChrome.css` variants are mutually exclusive. Only one should be in your `chrome` folder at a time. Rename the other to something like `userChrome.css.bak` to keep it around without loading it.
 - `toolkit.legacyUserProfileCustomizations.stylesheets` is the only `about:config` preference required to load the theme. If you want to edit the CSS live without restarting, also enable `devtools.debugger.remote-enabled` and `devtools.chrome.enabled` to unlock Zen's Browser Toolbox and Style Editor. Recent Zen versions may load `userChrome.css` regardless of the legacy preference, so if it keeps working after you toggle it off, that's expected.
 
+## Credits
+
+- **DeepSeek-v4-flash**  
+
 ## License
 
 MIT
