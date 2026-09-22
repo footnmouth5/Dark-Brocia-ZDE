@@ -12,7 +12,7 @@ Dark Broica CDE theme for Zen Browser. Vertical tabs  compact mode  userChrome.c
 |---|---|
 | [`userChrome.css`](userChrome.css) | Main theme. Full CDE styling with the stamped-border chrome, per-region palettes, and compact-mode handling. |
 | [`flatbase_userChrome.css`](flatbase_userChrome.css) | Flat alternative. Same palette and layout, but strips the raised/inverted border treatment on toolbars and buttons. One palette. |
-| [`CDE-Brocia-Dark-stylus-2026-09-22.json`](CDE-Brocia-Dark-stylus-2026-09-22.json) | Web-content companion for the [Stylus extension](https://addons.mozilla.org/firefox/addon/stylize/). Restyles website CSS (backgrounds, text, links, code blocks) to match the browser chrome. Import via Stylus → Manage → Import. Updates may be pushed here first: https://userstyles.world/style/30305|
+| [`CDE-Brocia-Dark-stylus-2026-09-22.json`](CDE-Brocia-Dark-stylus-2026-09-22.json) | Web-content companion for the [Stylus extension](https://addons.mozilla.org/en-US/firefox/addon/styl-us/). Restyles website CSS (backgrounds, text, links, code blocks) to match the browser chrome. Import via Stylus → Manage → Import. Updates may be pushed here first: https://userstyles.world/style/30305|
 
 You only need `userChrome.css` to get the browser chrome theme. The other two are optional add-ons depending on how deep you want to go.
 
@@ -43,7 +43,7 @@ Extended darks: `#1e222a`, `#2a2e38`, `#3a4050`, `#4a5160`, `#6a7285`
 
 ### Web content (`Stylus` userstyle)
 
-1. Install the [Stylus extension](https://addons.mozilla.org/firefox/addon/stylize/) if you don't have it.
+1. Install the [Stylus extension](https://addons.mozilla.org/en-US/firefox/addon/styl-us/) if you don't have it.
 2. Open Stylus → **Manage** → **Import**.
 3. Select the `.json` file from this repo.
 4. Enable the style. It applies globally to all HTTP/HTTPS pages.
